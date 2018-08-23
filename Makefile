@@ -38,7 +38,7 @@ SRC = main.c \
 OBJ = $(addprefix $(OBJDIR),$(SRC:.c=.o))
 
 LIBFT = ./libft/libft.a
-LIBFTINC = -I./libft
+LIBFTINC = -I./libft/include
 LINK_FT = -L./libft -lft
 
 LIBPF = ./libpf/libpf.a
