@@ -6,7 +6,7 @@
 /*   By: jfleisch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/08 14:57:34 by jfleisch          #+#    #+#             */
-/*   Updated: 2018/08/08 14:57:36 by jfleisch         ###   ########.fr       */
+/*   Updated: 2018/08/23 13:48:33 by jfleisch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ typedef struct	s_print
 /*
 ** ------ FUNCTIONS ------
 */
-int				ft_printf(const char *format, ...);
+int				ft_printf(char *format, ...);
 void			def_val(t_print *print, t_form *form);
 void			def_val2(t_print *print);
 int				parser(const char *format, t_form *form, t_print *print,

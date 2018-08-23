@@ -6,7 +6,7 @@
 /*   By: jfleisch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/08 15:32:27 by jfleisch          #+#    #+#             */
-/*   Updated: 2018/08/08 15:32:29 by jfleisch         ###   ########.fr       */
+/*   Updated: 2018/08/23 13:49:02 by jfleisch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void			def_val(t_print *print, t_form *form)
 	form->len = 0;
 }
 
-int				ft_printf(const char *format, ...)
+int				ft_printf(char *format, ...)
 {
 	va_list		vl;
 	t_print		print;
