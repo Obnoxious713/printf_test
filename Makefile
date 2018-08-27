@@ -34,6 +34,7 @@ SRC = libft/ft_putchar.c \
 		libft/ft_strtoupper.c \
 		libft/ft_ltoa_base.c \
 		libft/ft_ultoa_base.c \
+		libft/ft_itoa.c \
 		flags.c \
 		flags2.c \
 		ft_printf.c \
