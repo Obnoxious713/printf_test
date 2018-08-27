@@ -110,9 +110,9 @@ SRC = ft_atoi.c \
 OBJ = $(addprefix $(OBJDIR),$(SRC:.c=.o))
 # OBJ = $(patsubst %.c, %.o, $(SRC))
 
-SRCDIR = ./src/
-INCDIR = ./include/
-OBJDIR = ./bin/
+SRCDIR = ./
+INCDIR = ./
+OBJDIR = ./
 
 all: obj $(NAME)
 
