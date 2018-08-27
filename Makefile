@@ -18,8 +18,7 @@ CC = gcc
 
 NORM = norminette -R CheckForbiddenSourceHeader
 
-SRC = main.c \
-		parser.c \
+SRC = parser.c \
 		ft_putnbr_pr.c \
 		flags.c \
 		flags2.c \
