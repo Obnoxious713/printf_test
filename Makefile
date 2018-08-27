@@ -20,7 +20,19 @@ CC = gcc
 ODIR = ./
 IDIR = ./
 
-SRC = flags.c \
+SRC = libft/ft_putchar.c \
+		libft/ft_putstr.c \
+		libft/ft_putnbr.c \
+		libft/ft_toupper.c \
+		libft/ft_strlen.c \
+		libft/ft_itoa_base.c \
+		libft/ft_isdigit.c \
+		libft/ft_strcpy.c \
+		libft/ft_isalpha.c \
+		libft/ft_atoi.c \
+		libft/ft_strcmp.c \
+		libft/ft_strtoupper.c \
+		flags.c \
 		flags2.c \
 		ft_printf.c \
 		ft_putnbr_pr.c \
