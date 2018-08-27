@@ -50,7 +50,8 @@ SRC = libft/ft_putchar.c \
 		parse_x.c \
 		parser.c \
 		print_extra_flags.c \
-		print_extra_stuff.c
+		print_extra_stuff.c \
+		main.c
 
 OBJ = $(SRC:.c=.o)
 EXT = $(IDIR)$(NAME:.a=.h)
@@ -77,9 +78,14 @@ $(NAME): $(O) $(EXT)
 	@ranlib $(NAME)
 
 $(ODIR)%.o: %.c $(EXT)
-	@$(CC) $(FLAGS) $(FTINC) -c $< -o $@
+	@$(CC) $(FLAGS) $(FTINC) -I $(IDIR) -c $< -o $@
 
 $(O): | ./bin
+
+exe: $(NAME)
+	@echo "-> Compiling $(NAME)..."
+	@$(CC) -o $(NAME) $(O) $(LINK_FT)
+	@echo "\n   * * *   Done   * * *"
 
 ./bin:
 	@mkdir -p $(ODIR)
@@ -91,6 +97,7 @@ clean:
 fclean: clean
 	@echo "-> Cleaning $(NAME)...\n"
 	@rm -rf $(NAME)
+	@make -C ./libft fclean
 
 re: fclean all
 
