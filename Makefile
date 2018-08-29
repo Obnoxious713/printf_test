@@ -65,7 +65,7 @@ LINK_FT = -L./libft -lft
 
 LINK_PF = -L./ -lftprintf
 
-all: $(LIBFT) $(NAME)
+all: $(LIBFT) $(NAME) #exe
 
 love: all
 
