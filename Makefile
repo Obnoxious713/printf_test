@@ -20,7 +20,9 @@ CC = gcc
 ODIR = ./
 IDIR = ./
 
-SRC = libft/ft_putchar.c \
+SRC = libft/ft_bzero.c \
+		libft/ft_memalloc.c \
+		libft/ft_putchar.c \
 		libft/ft_putstr.c \
 		libft/ft_putnbr.c \
 		libft/ft_toupper.c \
