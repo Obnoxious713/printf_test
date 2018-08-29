@@ -87,7 +87,9 @@ void			print_flags(t_form *form, t_print *print,
 	if (print->sharp == 1)
 		print_sharp(form, print, str);
 	if (print->zed == 1)
+	{
 		print->precision = 0;
+	}
 }
 
 void			print_flags_back(t_form *form, t_print *print,

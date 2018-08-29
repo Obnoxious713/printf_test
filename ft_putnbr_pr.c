@@ -32,5 +32,5 @@ void			ft_putnbr_pr(int num, t_print *print)
 	if (num >= 10)
 		ft_putnbr_pr(num / 10, print);
 	print->loc++;
-	ft_putchar((num % 10 + min) + '0');
+	ft_putchar(((num % 10) + min) + '0');
 }
