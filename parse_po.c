@@ -20,8 +20,8 @@ void			form_o_1(t_form *form, t_print *print, va_list vl)
 	if (print->precision == 1)
 		print_just(form, print, n, ft_ltoa_base(n, 8));
 	print_flags(form, print, 0, ft_ltoa_base(n, 8));
-	ft_putstr(ft_strtoupper(ft_ltoa_base(n, 8)));
 	print->loc += ft_strlen(ft_ltoa_base(n, 8));
+	ft_putstr(ft_strtoupper(ft_ltoa_base(n, 8)));
 	print_flags_back(form, print, 0, ft_ltoa_base(n, 8));
 }
 
@@ -34,8 +34,8 @@ void			form_o(t_form *form, t_print *print, va_list vl)
 	{
 		i = (unsigned char)va_arg(vl, intmax_t);
 		print_flags(form, print, 0, ft_itoa_base(i, 8));
-		ft_putstr(ft_strtoupper(ft_itoa_base(i, 8)));
 		print->loc += ft_strlen(ft_itoa_base(i, 8));
+		ft_putstr(ft_strtoupper(ft_itoa_base(i, 8)));
 		print_flags_back(form, print, 0, ft_itoa_base(i, 8));
 	}
 	else if (form->o == 1)
@@ -44,8 +44,8 @@ void			form_o(t_form *form, t_print *print, va_list vl)
 		if (print->precision == 1)
 			print_just(form, print, l, ft_ultoa_base(l, 8));
 		print_flags(form, print, 0, ft_ultoa_base(l, 8));
-		ft_putstr(ft_ultoa_base(l, 8));
 		print->loc += ft_strlen(ft_ultoa_base(l, 8));
+		ft_putstr(ft_ultoa_base(l, 8));
 		print_flags_back(form, print, 0, ft_ultoa_base(l, 8));
 	}
 	if (form->o_1 == 1)

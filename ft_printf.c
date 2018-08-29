@@ -51,8 +51,8 @@ int				parser(const char *format, t_form *form, t_print *print,
 		while (format[i])
 		{
 			i = parse_flag_i(format, i, print, form);
-			if ((ft_isdigit(format[i + 1] && format[i + 1] != '0')
-					|| format[i + 1] == '.'))
+			if ((ft_isdigit(format[i + 1]) && format[i + 1] != '0')
+					|| format[i + 1] == '.')
 				i = parse_just(format, i, form, print);
 			i = parse_size_i(format, i, print);
 			i = space_i(format, i, print);

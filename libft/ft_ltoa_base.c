@@ -21,7 +21,7 @@ static int		get_len(long long n, int base)
 		i = 3;
 	else
 		i = 2;
-	while ((n = n / base))
+	while ((n /= base))
 		i++;
 	i--;
 	return (i);
@@ -37,14 +37,14 @@ static char		*get_str(long long n, int base)
 	check = 1;
 	ft_strcpy(checkbase, "0123456789abcdef");
 	k = get_len(n, base);
-	str = (char*)malloc(200);
+	str = (char*)ft_memalloc(200);
 	if (n < 0)
 		check = -1;
 	str[k--] = '\0';
 	while (n)
 	{
 		str[k--] = checkbase[check * (n % base)];
-		n = n / base;
+		n /= base;
 	}
 	if (check == -1)
 		str[k--] = '-';

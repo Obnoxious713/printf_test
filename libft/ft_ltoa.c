@@ -20,7 +20,7 @@ static int		count(long long n)
 		i = 3;
 	else
 		i = 2;
-	while ((n = n / 10))
+	while (n /= 10)
 		i++;
 	i--;
 	return (i);
@@ -31,24 +31,24 @@ char			*ft_ltoa(long long n)
 	char		*str;
 	int			size;
 	int			neg;
-	char		*str2;
+	char		*res;
 
 	neg = 1;
 	if (n == '\0')
 		return ("0");
 	size = count(n);
-	str = malloc(size);
+	str = ft_memalloc(size);
 	if (n < 0)
 		neg = -1;
 	str[size--] = '\0';
 	while (n)
 	{
 		str[size--] = neg * (n % 10) + '0';
-		n = n / 10;
+		n /= 10;
 	}
 	if (neg == -1)
 		str[size--] = '-';
-	str2 = str;
+	res = str;
 	free(str);
-	return (str2);
+	return (res);
 }

@@ -29,14 +29,15 @@ void			print_minus(t_form *form, t_print *print)
 	int			i;
 	int			size;
 
-	i = form->len - 1;
+	i = form->len;
 	if (print->before_len > 0)
 		size = print->before_size;
 	else
 		size = print->size;
-	while (++i < size)
+	while (i < size)
 	{
 		ft_putchar(' ');
+		i++;
 		print->loc++;
 	}
 }
@@ -48,10 +49,10 @@ void			print_zed(t_form *form, t_print *print)
 	i = form->len;
 	if (print->plus == 1)
 		i++;
-	i -= 1;
-	while (++i < print->size)
+	while (i < print->size)
 	{
 		ft_putchar('0');
+		i++;
 		print->loc++;
 	}
 }

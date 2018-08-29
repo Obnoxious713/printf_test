@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_loc.c                                        :+:      :+:    :+:   */
+/*   parse_i.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfleisch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -17,17 +17,17 @@ int				parse_flag_i(const char *format, int i,
 {
 	if (parse_flag(format, i, print))
 	{
-		if (print->minus == 1 && print->zed == 0
-			&& print->sharp == 0 && print->plus == 0)
+		if (print->minus == 1 && print->zed == 0 &&
+				print->sharp == 0 && print->plus == 0)
 		{
 			parse_just(format, i, form, print);
 			i = size_zed(format, i, print);
 		}
-		else if (print->zed == 1 && print->minus == 0
-				&& print->sharp == 0 && print->plus == 0)
+		else if (print->zed == 1 && print->minus == 0 &&
+			print->sharp == 0 && print->plus == 0)
 		{
 			parse_just(format, i, form, print);
-			i = size2(format, i, print);
+			i = get_size2(format, i, print);
 			i--;
 		}
 		else
@@ -69,8 +69,8 @@ int				space_i(const char *format, int i, t_print *print)
 
 int				last_i(const char *format, int i, t_print *print)
 {
-	if (!(ft_isdigit(format[i + 1])) && !(parse_flag(format, i, print))
-			&& !(parse_size(format, i, print)) && format[i + 1] != '.')
+	if (!ft_isdigit(format[i + 1]) && !parse_flag(format, i, print)	&&
+			!parse_size(format, i, print) && format[i + 1] != '.')
 		i++;
 	return (i);
 }

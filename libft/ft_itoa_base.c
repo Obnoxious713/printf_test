@@ -21,7 +21,7 @@ static int		get_len(int n, int base)
 		i = 3;
 	else
 		i = 2;
-	while ((n = n / base))
+	while ((n /= base))
 		i++;
 	i--;
 	return (i);
@@ -33,24 +33,26 @@ char			*ft_itoa_base(int n, int base)
 	int		check;
 	int		k;
 	char	*checkbase;
+	char	*res;
 
-	checkbase = malloc(17);
+	checkbase = (char*)ft_memalloc(17);
 	checkbase = "0123456789abcdef";
 	if (n == 0 || n == '\0')
 		return ("0");
 	check = 1;
 	k = get_len(n, base);
-	str = malloc(k);
+	str = (char*)ft_memalloc(k);
 	if (n < 0)
 		check = -1;
 	str[k--] = '\0';
 	while (n)
 	{
 		str[k--] = checkbase[check * (n % base)];
-		n = n / base;
+		n /= base;
 	}
 	if (check == -1)
 		str[k--] = '-';
+	res = str;
 	free(str);
-	return (str);
+	return (res);
 }

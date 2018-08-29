@@ -18,13 +18,15 @@ char	*ft_strrev(char *str)
 	int		i;
 	int		j;
 
-	i = -1;
-	j = ft_strlen(str);
-	while (++i < --j)
+	i = 0;
+	j = ft_strlen(str) - 1;
+	while (i < j)
 	{
 		tmp = str[i];
 		str[i] = str[j];
 		str[j] = tmp;
+		j--;
+		i++;
 	}
 	return (str);
 }

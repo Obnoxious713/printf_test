@@ -43,7 +43,6 @@ typedef struct	s_form
 
 typedef struct	s_print
 {
-	int			cap;
 	int			plus;
 	int			minus;
 	int			sharp;
@@ -86,7 +85,7 @@ void			ft_putstr_prec(char *str, t_print *print);
 int				ft_wstrlen(wchar_t *str);
 void			ft_putwstr_prec(wchar_t *str, t_print *print);
 int				num_len(long num);
-void			form_len(t_form *form, int num, char *str);
+void			form_zed(t_form *form, int num, char *str);
 void			print_flags(t_form *form, t_print *print, long num,
 								char *str);
 void			print_flags_back(t_form *form, t_print *print, long num,
@@ -108,8 +107,8 @@ void			many_formats(t_form *form, t_print *print, va_list vl);
 int				check_form(const char *format, int i);
 int				get_perc(const char *format, int i);
 void			last_d(t_form *form, t_print *print, va_list vl);
-int				size(const char *format, int i, t_form *form, t_print *print);
-int				size2(const char *format, int i, t_print *print);
+int				get_size(const char *format, int i, t_form *form, t_print *print);
+int				get_size2(const char *format, int i, t_print *print);
 int				size_zed(const char *format, int i, t_print *print);
 void			print_plus(t_form *form, t_print *print, int num);
 void			print_minus(t_form *form, t_print *print);

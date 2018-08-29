@@ -16,10 +16,10 @@ void			ft_putstr_min(char *str, t_print *print)
 {
 	int			i;
 
-	i = -1;
-	while (++i < print->after_size && str[i])
+	i = 0;
+	while (i < print->after_size && str[i])
 	{
-		ft_putchar(str[i]);
+		ft_putchar(str[i++]);
 		print->loc++;
 	}
 }

@@ -66,7 +66,7 @@ void			form_x_1(t_form *form, t_print *print, va_list vl)
 		hx_1(form, print, vl);
 	else if (form->x_1 == 1 && (print->l_1 == 1 || print->l_2 == 1))
 		lx_1(form, print, vl);
-	else if (form->x_1 == 1 && (print->j == 1 || print->z == 1))
+	else if (form->x_1 == 1 && (print->z == 1 || print->j == 1))
 		jzx_1(form, print, vl);
 	else if (form->x_1 == 1)
 		reg_x_1(form, print, vl);

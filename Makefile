@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = libftprintf.a
-NAME2 = libftprintf
+NAME2 = pft
 
 FLAGS =	-Wall -Wextra -Werror -g
 
@@ -42,7 +42,7 @@ SRC = libft/ft_putchar.c \
 		ft_putulong.c \
 		parse_cs.c \
 		parse_d.c \
-		parse_loc.c \
+		parse_i.c \
 		parse_num_form.c \
 		parse_po.c \
 		parse_size.c \
@@ -62,7 +62,9 @@ LIBFT = ./libft/libft.a
 FTINC = -I./libft
 LINK_FT = -L./libft -lft
 
-all: $(LIBFT) $(NAME)
+LINK_PF = -L./ -lftprintf
+
+all: $(LIBFT) exe
 
 love: all
 
@@ -77,14 +79,14 @@ $(NAME): $(O) $(EXT)
 	@ar rc $(NAME) $(O)
 	@ranlib $(NAME)
 
-$(ODIR)%.o: %.c $(EXT)
+$(ODIR)%.o: %.c
 	@$(CC) $(FLAGS) $(FTINC) -I $(IDIR) -c $< -o $@
 
 $(O): | ./bin
 
 exe: $(NAME)
-	@echo "-> Compiling $(NAME)..."
-	@$(CC) -o $(NAME) $(O) $(LINK_FT)
+	@echo "-> Compiling $(NAME2)..."
+	@$(CC) -o $(NAME2) $(O) $(LINK_FT) $(LINK_PF)
 	@echo "\n   * * *   Done   * * *"
 
 ./bin:
@@ -92,11 +94,12 @@ exe: $(NAME)
 
 clean:
 	@echo "-> Cleaning $(NAME2) object files..."
-	@rm -rf *.o
+	@rm -rf $(O)
 
 fclean: clean
 	@echo "-> Cleaning $(NAME)...\n"
 	@rm -rf $(NAME)
+	@rm -rf $(NAME2)
 	@make -C ./libft fclean
 
 re: fclean all
