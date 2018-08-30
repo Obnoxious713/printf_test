@@ -34,7 +34,7 @@ void			print_minus(t_form *form, t_print *print)
 		size = print->before_size;
 	else
 		size = print->size;
-	while (i < size)
+	while (i <= size)
 	{
 		ft_putchar(' ');
 		i++;
