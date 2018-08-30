@@ -16,7 +16,7 @@ int			parse_flag(const char *format, int i, t_print *print)
 {
 	if (format[i + 1] == '\0')
 		return (0);
-	if (format[i + 1] == '+')
+	else if (format[i + 1] == '+')
 		print->plus = 1;
 	else if (format[i + 1] == '-')
 		print->minus = 1;

@@ -24,7 +24,7 @@ void			ft_putnbr_pr(int num, t_print *print)
 		if (num == -2147483648)
 		{
 			min = 1;
-			num = (int)2147483648;
+			num = 2147483647;
 		}
 		else
 			num *= -1;
@@ -32,5 +32,5 @@ void			ft_putnbr_pr(int num, t_print *print)
 	if (num >= 10)
 		ft_putnbr_pr(num / 10, print);
 	print->loc++;
-	ft_putchar(((num % 10) + min) + '0');
+	ft_putchar((num % 10 + min) + '0');
 }

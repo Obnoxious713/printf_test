@@ -20,8 +20,8 @@ void			ft_putstr_min(char *str, t_print *print)
 	while (i < print->after_size && str[i])
 	{
 		ft_putchar(str[i]);
-		print->loc++;
 		i++;
+		print->loc++;
 	}
 }
 
@@ -41,7 +41,8 @@ void			form_s_1(t_form *form, t_print *print, va_list vl)
 	{
 		while (str[i])
 		{
-			ft_putchar(str[i++]);
+			ft_putchar(str[i]);
+			i++;
 			print->loc++;
 		}
 		form->len = i;
