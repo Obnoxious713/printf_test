@@ -52,8 +52,8 @@ SRC = libft/ft_bzero.c \
 		parse_x.c \
 		parser.c \
 		print_extra_flags.c \
-		print_extra_stuff.c \
-		##! main.c
+		print_extra_stuff.c
+		# main.c
 OBJ = $(SRC:.c=.o)
 EXT = $(IDIR)$(NAME:.a=.h)
 
@@ -65,7 +65,7 @@ LINK_FT = -L./libft -lft
 
 LINK_PF = -L./ -lftprintf
 
-all: $(LIBFT) $(NAME) ##!exe
+all: $(LIBFT) $(NAME) #exe
 
 love: all
 
