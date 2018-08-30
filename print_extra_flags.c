@@ -34,16 +34,14 @@ void			print_minus(t_form *form, t_print *print)
 		size = print->before_size;
 	else
 		size = print->size;
-	while (i < size)
+	if (size != 0)
 	{
-		ft_putchar(' ');
-		i++;
-		print->loc++;
-	}
-	if (i == 0)
-	{
-		i++;
-		print->loc++;
+		while (i < size)
+		{
+			ft_putchar(' ');
+			i++;
+			print->loc++;
+		}
 	}
 }
 
