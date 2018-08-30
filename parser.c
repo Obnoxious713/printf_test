@@ -20,8 +20,9 @@ int			parse_flag(const char *format, int i, t_print *print)
 		print->plus = 1;
 	else if (format[i + 1] == '-')
 	{
-		if (ft_isdigit(ft_atoi(&format[i + 2])))
-			print->minus = 1;
+		print->minus = 1;
+		if (!ft_isdigit(ft_atoi(&format[i + 2])))
+			print->minus = 0;
 	}
 	else if (format[i + 1] == '#')
 		print->sharp = 1;
