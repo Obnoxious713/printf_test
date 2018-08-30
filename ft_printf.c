@@ -22,7 +22,7 @@ int				get_loc(const char *format, int i, t_print *print)
 			{
 				ft_putchar('%');
 				print->loc++;
-				i += 1;
+				i++;
 			}
 			else
 				return (i);

@@ -34,22 +34,24 @@ void			ft_putstr_prec(char *str, t_print *print)
 	int			j;
 	int			len;
 
-	i = -1;
-	j = -1;
+	i = 0;
+	j = 0;
 	if (print->after_size < (int)ft_strlen(str))
 		len = print->before_size - print->after_size;
 	else
 		len = print->before_size - (int)ft_strlen(str);
-	while (++j < len)
+	while (j < len)
 	{
 		ft_putchar(' ');
+		j++;
 		print->loc++;
 	}
-	while (++i < print->after_size)
+	while (i < print->after_size)
 	{
 		if (!str[i])
 			break ;
 		ft_putchar(str[i]);
+		i++;
 		print->loc++;
 	}
 }
@@ -70,22 +72,24 @@ void			ft_putwstr_prec(wchar_t *str, t_print *print)
 	int			j;
 	int			len;
 
-	i = -1;
-	j = -1;
+	i = 0;
+	j = 0;
 	if (print->after_size < ft_wstrlen(str))
 		len = print->before_size - print->after_size;
 	else
 		len = print->before_size - ft_wstrlen(str);
-	while (++j < len)
+	while (j < len)
 	{
 		ft_putchar(' ');
+		j++;
 		print->loc++;
 	}
-	while (++i < print->after_size)
+	while (i < print->after_size)
 	{
 		if (!str[i])
 			break ;
 		ft_putchar(str[i]);
+		i++;
 		print->loc++;
 	}
 }

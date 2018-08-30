@@ -112,7 +112,7 @@ void			print_flags_back(t_form *form, t_print *print,
 			if (num == 0)
 				form->len = 3;
 			else
-				form->len = ft_strlen(str) + 2;
+				form->len = 2 + ft_strlen(str);
 		}
 		else if (form->c == 1)
 			form->len = 1;

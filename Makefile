@@ -52,7 +52,7 @@ SRC = libft/ft_bzero.c \
 		parse_x.c \
 		parser.c \
 		print_extra_flags.c \
-		print_extra_stuff.c
+		print_extra_stuff.c \
 		##! main.c
 OBJ = $(SRC:.c=.o)
 EXT = $(IDIR)$(NAME:.a=.h)
