@@ -71,7 +71,7 @@ typedef struct	s_print
 int				ft_printf(char *format, ...);
 void			def_val(t_print *print, t_form *form);
 void			def_val2(t_print *print);
-int				parser(const char *format, t_form *form, t_print *print,
+int				init(const char *format, t_form *form, t_print *print,
 							va_list vl);
 int				get_loc(const char *format, int i, t_print *print);
 int				parse_flag(const char *format, int i, t_print *print);

@@ -22,7 +22,7 @@ int				get_loc(const char *format, int i, t_print *print)
 			{
 				ft_putchar('%');
 				print->loc++;
-				i++;
+				i += 1;
 			}
 			else
 				return (i);
@@ -37,7 +37,7 @@ int				get_loc(const char *format, int i, t_print *print)
 	return (i);
 }
 
-int				parser(const char *format, t_form *form, t_print *print,
+int				init(const char *format, t_form *form, t_print *print,
 							va_list vl)
 {
 	int			i;
@@ -120,7 +120,7 @@ int				ft_printf(char *format, ...)
 	def_val(&print, &form);
 	def_val2(&print);
 	va_start(vl, format);
-	parser(format, &form, &print, vl);
+	init(format, &form, &print, vl);
 	va_end(vl);
 	def_val(&print, &form);
 	def_val2(&print);

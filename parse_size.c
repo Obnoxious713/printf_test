@@ -68,7 +68,7 @@ int				get_size2(const char *format, int i, t_print *print)
 	if (!ft_isdigit(format[i]))
 	{
 		if (get_perc(format, i + 1) && format[i + 1] != '-' &&
-						format[i + 1] != '0')
+				format[i + 1] != '0')
 			return (i + 1);
 		while (format[i] && !ft_isdigit(format[i]))
 			i++;
