@@ -31,28 +31,26 @@ char			*ft_itoa_base(int n, int base)
 {
 	char	*str;
 	int		check;
-	int		k;
+	int		len;
 	char	*checkbase;
-	char	*res;
 
 	checkbase = (char*)ft_memalloc(17);
 	checkbase = "0123456789abcdef";
 	if (n == 0 || n == '\0')
 		return ("0");
 	check = 1;
-	k = get_len(n, base);
-	str = (char*)ft_memalloc(k);
+	len = get_len(n, base);
+	str = (char*)ft_memalloc(len);
 	if (n < 0)
 		check = -1;
-	str[k--] = '\0';
+	str[len--] = '\0';
 	while (n)
 	{
-		str[k--] = checkbase[check * (n % base)];
+		str[len--] = checkbase[check * (n % base)];
 		n /= base;
 	}
 	if (check == -1)
-		str[k--] = '-';
-	res = str;
+		str[len--] = '-';
 	free(str);
-	return (res);
+	return (str);
 }

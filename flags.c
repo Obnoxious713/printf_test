@@ -1,95 +1,68 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flgas.c                                            :+:      :+:    :+:   */
+/*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfleisch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/08 15:54:10 by jfleisch          #+#    #+#             */
-/*   Updated: 2018/08/08 15:54:11 by jfleisch         ###   ########.fr       */
+/*   Created: 2018/08/31 15:08:14 by jfleisch          #+#    #+#             */
+/*   Updated: 2018/08/31 15:08:14 by jfleisch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void			form_d_1(t_form *form, t_print *print, va_list vl)
+void			print_flags(t_type *type, t_print *print,
+							long num, char *str)
 {
-	long long	num_l;
-	char		*str;
-
-	if (form->d_1 == 1)
+	if (print->plus == 1)
+		print_plus(type, print, num);
+	if (print->zero == 1 && print->minus == 0)
 	{
-		num_l = va_arg(vl, long long);
-		str = ft_ltoa_base(num_l, 10);
-		print_flags(form, print, num_l, NULL);
-		ft_putstr(str);
-		print->loc += ft_strlen(str);
-		print_flags_back(form, print, num_l, NULL);
+		zero_len(type, num, str);
+		if (num < 0)
+		{
+			ft_putchar('-');
+			print->loc++;
+		}
+		if (print->before_len > 0 && print->after_len > 0)
+			print_just(type, print, num, str);
+		else
+			print_zero(type, print);
 	}
+	if (print->space == 1)
+		print_space(type, print, num);
+	if (print->sharp == 1)
+		print_sharp(type, print, str);
+	if (print->zero == 1)
+		print->precision = 0;
 }
 
-void			ft_putstr_prec(char *str, t_print *print)
+void			print_flags_back(t_type *type, t_print *print,
+								long num, char *str)
 {
-	int			i;
-	int			j;
-	int			len;
-
-	i = 0;
-	j = 0;
-	if (print->after_size < (int)ft_strlen(str))
-		len = print->before_size - print->after_size;
-	else
-		len = print->before_size - (int)ft_strlen(str);
-	while (j < len)
+	if (print->minus == 1)
 	{
-		ft_putchar(' ');
-		j++;
-		print->loc++;
-	}
-	while (i < print->after_size)
-	{
-		if (!str[i])
-			break ;
-		ft_putchar(str[i]);
-		i++;
-		print->loc++;
-	}
-}
-
-int				ft_wstrlen(wchar_t *str)
-{
-	int			i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-void			ft_putwstr_prec(wchar_t *str, t_print *print)
-{
-	int			i;
-	int			j;
-	int			len;
-
-	i = 0;
-	j = 0;
-	if (print->after_size < ft_wstrlen(str))
-		len = print->before_size - print->after_size;
-	else
-		len = print->before_size - ft_wstrlen(str);
-	while (j < len)
-	{
-		ft_putchar(' ');
-		j++;
-		print->loc++;
-	}
-	while (i < print->after_size)
-	{
-		if (!str[i])
-			break ;
-		ft_putchar(str[i]);
-		i++;
-		print->loc++;
+		if (type->d == 1 || type->i == 1)
+		{
+			if (print->l_1 == 1 || print->l_2 == 1)
+				type->len = num_len_l(num);
+			else
+				type->len = num_len_i((int)num);
+		}
+		else if (type->x == 1 || type->x_1 == 1 || type->o == 1 ||
+					type->o_1 == 1 || type->s == 1 || type->s_1 == 1)
+			type_xo(type, print, str);
+			//todo rename ^
+		else if (type->p == 1)
+		{
+			if (num == 0)
+				type->len = 3;
+			else
+				type->len = ft_strlen(str) + 2;
+		}
+		else if (type->c == 1)
+			type->len =1;
+		print_minus(type, print);
 	}
 }

@@ -27,6 +27,7 @@ SRC = libft/ft_bzero.c \
 		libft/ft_putnbr.c \
 		libft/ft_toupper.c \
 		libft/ft_strlen.c \
+		libft/ft_itoa.c \
 		libft/ft_itoa_base.c \
 		libft/ft_isdigit.c \
 		libft/ft_strcpy.c \
@@ -34,25 +35,25 @@ SRC = libft/ft_bzero.c \
 		libft/ft_atoi.c \
 		libft/ft_strcmp.c \
 		libft/ft_strtoupper.c \
+		libft/ft_ltoa.c \
 		libft/ft_ltoa_base.c \
 		libft/ft_ultoa_base.c \
-		libft/ft_itoa.c \
+		libft/ft_wstrlen.c \
 		flags.c \
-		flags2.c \
 		ft_printf.c \
 		ft_putnbr_pr.c \
+		ft_putstr_min.c \
+		ft_putstr_prec.c \
 		ft_putulong.c \
-		parse_cs.c \
-		parse_d.c \
-		parse_i.c \
-		parse_num_form.c \
-		parse_po.c \
-		parse_size.c \
-		parse_x_1.c \
-		parse_x.c \
+		ft_putwstr_prec.c \
+		helper.c \
+		loc.c \
 		parser.c \
-		print_extra_flags.c \
-		print_extra_stuff.c
+		size.c \
+		start.c \
+		type_id.c \
+		type.c
+
 		# main.c
 OBJ = $(SRC:.c=.o)
 EXT = $(IDIR)$(NAME:.a=.h)
@@ -70,7 +71,7 @@ all: $(LIBFT) $(NAME) #exe
 love: all
 
 norm:
-	norminette $(S)
+	norminette -R CheckForbiddenSourceHeader
 
 $(LIBFT):
 	@make -C ./libft
