@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int.c                                              :+:      :+:    :+:   */
+/*   type_int.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfleisch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -23,12 +23,12 @@ void			ld(t_type *type, t_print *print, va_list vlst)
 			l = (long long)va_arg(vlst, intmax_t);
 		else
 			l = (long)va_arg(vlst, intmax_t);
-		print_flags(type, print, l, NULL);
+		print_flags_start(type, print, l, NULL);
 		if (print->zero == 1 && l < 0)
 			l *= -1;
 		ft_putstr(ft_ltoa_base(l, 10));
 		print->loc += ft_strlen(ft_ltoa_base(l, 10));
-		print_flags_back(type, print, l, NULL);
+		print_flags_end(type, print, l, NULL);
 	}
 }
 
@@ -37,12 +37,12 @@ void			hd(t_type *type, t_print *print, va_list vlst)
 	intmax_t	h;
 
 	h = (char)va_arg(vlst, int);
-	print_flags(type, print, h, NULL);
+	print_flags_start(type, print, h, NULL);
 	if (print->zero == 1 && h < 0)
 		h *= -1;
 	ft_putstr(ft_itoa(h));
 	print->loc++;
-	print_flags_back(type, print, h, NULL);
+	print_flags_end(type, print, h, NULL);
 }
 
 void			zd(t_type *type, t_print *print, va_list vlst)
@@ -50,12 +50,12 @@ void			zd(t_type *type, t_print *print, va_list vlst)
 	intmax_t	z;
 
 	z = (size_t)va_arg(vlst, intmax_t);
-	print_flags(type, print, z, NULL);
+	print_flags_start(type, print, z, NULL);
 	if (print->zero == 1 && z < 0)
 		z *= -1;
 	ft_putstr(ft_ltoa_base(z, 10));
 	print->loc += ft_strlen(ft_ltoa_base(z, 10));
-	print_flags_back(type, print, z, NULL);
+	print_flags_end(type, print, z, NULL);
 }
 
 void			jd(t_type *type, t_print *print, va_list vlst)
@@ -63,12 +63,12 @@ void			jd(t_type *type, t_print *print, va_list vlst)
 	intmax_t	j;
 
 	j = va_arg(vlst, intmax_t);
-	print_flags(type, print, j, NULL);
+	print_flags_start(type, print, j, NULL);
 	if (print->zero == 1 && j < 0)
 		j *= -1;
 	ft_putstr(ft_ltoa_base(j, 10));
 	print->loc += ft_strlen(ft_ltoa_base(j, 10));
-	print_flags_back(type, print, j, NULL);
+	print_flags_end(type, print, j, NULL);
 }
 
 void			type_d(t_type *type, t_print *print, va_list vlst)

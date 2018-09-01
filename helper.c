@@ -51,3 +51,11 @@ int				num_len_i(int num)
 	}
 	return (i);
 }
+
+void			osx_len(t_type *type, t_print *print, char *str)
+{
+	if (print->before_len > 0 && print->after_size < (int)ft_strlen(str))
+		type->len = print->after_size;
+	else
+		type->len = ft_strlen(str);
+}

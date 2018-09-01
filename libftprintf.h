@@ -77,9 +77,9 @@ void			start(const char *format, t_type *type, t_print *print,
 void			def_val(t_print *print, t_type *type);
 void			def_val2(t_print *print);
 //!
-void			print_flags(t_type *type, t_print *print,
+void			print_flags_start(t_type *type, t_print *print,
 							long num, char *str);
-void			print_flags_back(t_type *type, t_print *print,
+void			print_flags_end(t_type *type, t_print *print,
 								long num, char *str);
 //!
 void			ft_putnbr_pr(int num, t_print *print);
@@ -90,6 +90,7 @@ void			ft_putwstr_prec(wchar_t *str, t_print *print);
 //!
 int				num_len_i(int num);
 int				num_len_l(long num);
+void			osx_len(t_type *type, t_print *print, char *str);
 //!
 int				get_loc(const char *format, int loc, t_print *print);
 int				type_loc(const char *format, int loc,
@@ -120,5 +121,29 @@ void			hd(t_type *type, t_print *print, va_list vlst);
 void			zd(t_type *type, t_print *print, va_list vlst);
 void			jd(t_type *type, t_print *print, va_list vlst);
 //!
-
+void			type_x(t_type *type, t_print *print, va_list vlst);
+void			reg_x(t_type *type, t_print *print, va_list vlst);
+void			jzx(t_type *type, t_print *print, va_list vlst);
+void			lx(t_type *type, t_print *print, va_list vlst);
+void			hx(t_type *type, t_print *print, va_list vlst);
+//!
+void			type_x_1(t_type *type, t_print *print, va_list vlst);
+void			reg_x_1(t_type *type, t_print *print, va_list vlst);
+void			jzx_1(t_type *type, t_print *print, va_list vlst);
+void			lx_1(t_type *type, t_print *print, va_list vlst);
+void			hx_1(t_type *type, t_print *print, va_list vlst);
+//!
+void			print_space(t_type *type, t_print *print, long num);
+void			print_sharp(t_type *type, t_print *print, char *str);
+void			print_zero(t_type *type, t_print *print);
+void			print_minus(t_type *type, t_print *print);
+void			print_plus(t_type *type, t_print *print, int num);
+//!
+void			print_prec(t_type *type, t_print *print,
+								intmax_t num, char *str);
+void			print_space_prec(int loc, int z_len, t_print *print);
+void			print_zero_prec(int z_len, t_print *print);
+int				prec_len(t_type *type, t_print *print,
+							intmax_t num, char *str);
+//!
 #endif

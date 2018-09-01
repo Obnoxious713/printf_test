@@ -12,7 +12,7 @@
 
 #include "libftprintf.h"
 
-void			print_flags(t_type *type, t_print *print,
+void			print_flags_start(t_type *type, t_print *print,
 							long num, char *str)
 {
 	if (print->plus == 1)
@@ -26,7 +26,7 @@ void			print_flags(t_type *type, t_print *print,
 			print->loc++;
 		}
 		if (print->before_len > 0 && print->after_len > 0)
-			print_just(type, print, num, str);
+			print_prec(type, print, num, str);
 		else
 			print_zero(type, print);
 	}
@@ -38,7 +38,7 @@ void			print_flags(t_type *type, t_print *print,
 		print->precision = 0;
 }
 
-void			print_flags_back(t_type *type, t_print *print,
+void			print_flags_end(t_type *type, t_print *print,
 								long num, char *str)
 {
 	if (print->minus == 1)
@@ -52,7 +52,7 @@ void			print_flags_back(t_type *type, t_print *print,
 		}
 		else if (type->x == 1 || type->x_1 == 1 || type->o == 1 ||
 					type->o_1 == 1 || type->s == 1 || type->s_1 == 1)
-			type_xo(type, print, str);
+			osx_len(type, print, str);
 			//todo rename ^
 		else if (type->p == 1)
 		{
