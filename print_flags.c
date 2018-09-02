@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_extra_flags.c                                :+:      :+:    :+:   */
+/*   print_flags.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfleisch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/08 15:54:10 by jfleisch          #+#    #+#             */
-/*   Updated: 2018/08/08 15:54:11 by jfleisch         ###   ########.fr       */
+/*   Created: 2018/08/31 19:12:09 by jfleisch          #+#    #+#             */
+/*   Updated: 2018/08/31 19:12:10 by jfleisch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void			print_plus(t_form *form, t_print *print, int num)
+void			print_plus(t_type *type, t_print *print, int num)
 {
-	if (form->d == 1 || form->d_1 == 1 || form->i == 1)
+	if (type->d == 1 || type->d_1 == 1 || type->i == 1)
 	{
 		if (num >= 0)
 		{
@@ -24,12 +24,12 @@ void			print_plus(t_form *form, t_print *print, int num)
 	}
 }
 
-void			print_minus(t_form *form, t_print *print)
+void			print_minus(t_type *type, t_print *print)
 {
 	int			i;
 	int			size;
 
-	i = form->len;
+	i = type->len;
 	if (print->before_len > 0)
 		size = print->before_size;
 	else
@@ -42,11 +42,11 @@ void			print_minus(t_form *form, t_print *print)
 	}
 }
 
-void			print_zed(t_form *form, t_print *print)
+void			print_zero(t_type *type, t_print *print)
 {
 	int			i;
 
-	i = form->len;
+	i = type->len;
 	if (print->plus == 1)
 		i++;
 	while (i < print->size)
@@ -57,17 +57,17 @@ void			print_zed(t_form *form, t_print *print)
 	}
 }
 
-void			print_sharp(t_form *form, t_print *print, char *str)
+void			print_sharp(t_type *type, t_print *print, char *str)
 {
-	if ((form->x == 1 || form->x_1 == 1) && ft_atoi(str) > 0)
+	if ((type->x == 1 || type->x_1 == 1) && ft_atoi(str) > 0)
 	{
-		if (form->x == 1)
+		if (type->x == 1)
 			ft_putstr("0x");
 		else
 			ft_putstr("0X");
 		print->loc += 2;
 	}
-	else if (form->o == 1 || form->o_1 == 1)
+	else if (type->o == 1 || type->o_1 == 1)
 	{
 		if (ft_atoi(str) != 0)
 		{
@@ -77,9 +77,9 @@ void			print_sharp(t_form *form, t_print *print, char *str)
 	}
 }
 
-void			print_space(t_form *form, t_print *print, long num)
+void			print_space(t_type *type, t_print *print, long num)
 {
-	if (form->d == 1 || form->i == 1)
+	if (type->d == 1 || type->i == 1)
 	{
 		if (num >= 0)
 		{

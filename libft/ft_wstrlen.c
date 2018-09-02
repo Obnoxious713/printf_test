@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_wstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfleisch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/31 13:06:15 by jfleisch          #+#    #+#             */
-/*   Updated: 2018/08/31 13:06:16 by jfleisch         ###   ########.fr       */
+/*   Created: 2018/08/31 13:39:42 by jfleisch          #+#    #+#             */
+/*   Updated: 2018/08/31 13:39:44 by jfleisch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "../libftprintf.h"
 
-int				ft_printf(const char *format, ...)
+int				ft_wstrlen(wchar_t *str)
 {
-	va_list		vlstst;
-	t_print		print;
-	t_type		type;
+	int			i;
 
-	type.c = 0;
-	print.loc = 0;
-	def_val(&print, &type);
-	def_val2(&print);
-	va_start(vlstst, format);
-	start(format, &type, &print, vlstst);
-	va_end(vlstst);
-	def_val(&print, &type);
-	def_val2(&print);
-	return (print.loc);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

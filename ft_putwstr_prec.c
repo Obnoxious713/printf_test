@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putwstr_prec.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfleisch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/31 13:06:15 by jfleisch          #+#    #+#             */
-/*   Updated: 2018/08/31 13:06:16 by jfleisch         ###   ########.fr       */
+/*   Created: 2018/08/31 15:05:34 by jfleisch          #+#    #+#             */
+/*   Updated: 2018/08/31 15:05:35 by jfleisch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int				ft_printf(const char *format, ...)
+void			ft_putwstr_prec(wchar_t *str, t_print *print)
 {
-	va_list		vlstst;
-	t_print		print;
-	t_type		type;
+	int			i;
+	int			j;
+	int			len;
 
-	type.c = 0;
-	print.loc = 0;
-	def_val(&print, &type);
-	def_val2(&print);
-	va_start(vlstst, format);
-	start(format, &type, &print, vlstst);
-	va_end(vlstst);
-	def_val(&print, &type);
-	def_val2(&print);
-	return (print.loc);
+	i = 0;
+	j = 0;
+	if (print->after_size < ft_wstrlen(str))
+		len = print->before_size - print->after_size;
+	else
+		len = print->before_size - ft_wstrlen(str);
+	while (j < len)
+	{
+		ft_putchar(' ');
+		j++;
+		print->loc++;
+	}
+	while (i < print->after_size)
+	{
+		if (!str[i])
+			break ;
+		ft_putchar(str[i]);
+		i++;
+		print->loc++;
+	}
 }

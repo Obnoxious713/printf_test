@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_min.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfleisch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/31 13:06:15 by jfleisch          #+#    #+#             */
-/*   Updated: 2018/08/31 13:06:16 by jfleisch         ###   ########.fr       */
+/*   Created: 2018/08/31 13:03:37 by jfleisch          #+#    #+#             */
+/*   Updated: 2018/08/31 13:03:39 by jfleisch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int				ft_printf(const char *format, ...)
+void			ft_putstr_min(char *str, t_print *print)
 {
-	va_list		vlstst;
-	t_print		print;
-	t_type		type;
+	int			i;
 
-	type.c = 0;
-	print.loc = 0;
-	def_val(&print, &type);
-	def_val2(&print);
-	va_start(vlstst, format);
-	start(format, &type, &print, vlstst);
-	va_end(vlstst);
-	def_val(&print, &type);
-	def_val2(&print);
-	return (print.loc);
+	i = 0;
+	while (i < print->after_size && str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+		print->loc++;
+	}
 }

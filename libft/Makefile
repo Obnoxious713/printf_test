@@ -105,7 +105,8 @@ SRC = ft_atoi.c \
 		ft_ultoa_base.c \
 		ft_strrev.c \
 		ft_strtoupper.c \
-		ft_itoa_base.c
+		ft_itoa_base.c \
+		ft_wstrlen.c
 
 OBJ = $(addprefix $(OBJDIR),$(SRC:.c=.o))
 # OBJ = $(patsubst %.c, %.o, $(SRC))
