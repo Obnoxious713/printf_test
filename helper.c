@@ -59,3 +59,15 @@ void			osx_len(t_type *type, t_print *print, char *str)
 	else
 		type->len = ft_strlen(str);
 }
+
+void			zero_len(t_type *type, int num, char *str)
+{
+	if (type->d == 1 || type->i == 1)
+		type->len = num_len_l(num);
+	else if (type->x == 1 || type->x_1 == 1 || type->s == 1)
+		type->len = ft_strlen(str);
+	else if (type->c == 1)
+		type->len = 1;
+	else if (type->p == 1)
+		type->len = ft_strlen(str) + 2;
+}

@@ -12,6 +12,26 @@
 
 #include "libftprintf.h"
 
+void			type_p(t_type *type, t_print *print, va_list vlst)
+{
+	unsigned long long	p;
+
+	if (type->p == 1)
+	{
+		p = va_arg(vlst, unsigned long long);
+		if (print->precision == 1)
+			print_prec(type, print, p, ft_ltoa_base(p, 16));
+		else
+			ft_putstr("0x");
+		if (p == 0)
+			ft_putchar('0');
+		else
+			ft_putstr(ft_ltoa_base(p, 16));
+		print->loc += ft_strlen(ft_ltoa_base(p, 16)) + 2;
+		print_flags_end(type, print, p, ft_ltoa_base(p, 16));
+	}
+}
+
 void			type_s_1(t_type *type, t_print *print, va_list vlst)
 {
 	int			i;

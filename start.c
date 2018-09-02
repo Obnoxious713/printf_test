@@ -55,7 +55,7 @@ void			def_val(t_print *print, t_type *type)
 }
 
 void			start(const char *format, t_type *type, t_print *print,
-						va_list vlstst)
+						va_list vlst)
 {
 	int			loc;
 
@@ -70,12 +70,12 @@ void			start(const char *format, t_type *type, t_print *print,
 			loc = type_loc(format, loc, print, type);
 			if ((ft_isdigit(format[loc + 1]) && format[loc + 1] != '0') ||
 					format[loc + 1] == '.')
-				loc = parse_just(format, loc, type, print);
+				loc = parse_loc(format, loc, type, print);
 			loc = size_loc(format, loc, print);
 			loc = space_loc(format, loc, print);
-			if (parse_flag(format, loc, type))
+			if (parse_flag(format, loc, print))
 			{
-				loc = type_loc(format, loc, print, type);
+				loc = parse_type_loc(type, print, vlst, loc);
 				break ;
 			}
 			loc = last_loc(format, loc, print);

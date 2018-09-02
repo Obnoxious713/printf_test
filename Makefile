@@ -49,9 +49,15 @@ SRC = libft/ft_bzero.c \
 		helper.c \
 		loc.c \
 		parser.c \
+		prec.c \
+		print_flags.c \
 		size.c \
 		start.c \
-		type_id.c \
+		type_char.c \
+		type_hex_int_1.c \
+		type_hex_int.c \
+		type_int_1.c \
+		type_int.c \
 		type.c
 
 		# main.c

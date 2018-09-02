@@ -45,14 +45,13 @@ int				type_loc(const char *format, int loc,
 		if (print->minus == 1 && print->zero == 0 &&
 				print->sharp == 0 && print->plus == 0)
 		{
-			parse_just(format, loc, type, print);
-			//todo rename ^
+			parse_loc(format, loc, type, print);
 			loc = get_zsize(format, loc, print);
 		}
 		else if (print->zero == 1 && print->minus == 0 &&
 			print->sharp == 0 && print->plus == 0)
 		{
-			parse_just(format, loc, type, print);
+			parse_loc(format, loc, type, print);
 			loc = get_psize(format, loc, print);
 			loc--;
 		}

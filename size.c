@@ -72,7 +72,7 @@ int				get_zsize(const char *format, int loc, t_print *print)
 	i = 0;
 	while (!ft_isdigit(format[loc]) && format[loc])
 	{
-		if (check_type(format, loc));
+		if (check_type(format, loc))
 			return (loc);
 		loc++;
 	}

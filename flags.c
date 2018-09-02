@@ -53,7 +53,7 @@ void			print_flags_end(t_type *type, t_print *print,
 		else if (type->x == 1 || type->x_1 == 1 || type->o == 1 ||
 					type->o_1 == 1 || type->s == 1 || type->s_1 == 1)
 			osx_len(type, print, str);
-			//todo rename ^
+			
 		else if (type->p == 1)
 		{
 			if (num == 0)

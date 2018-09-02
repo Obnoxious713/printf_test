@@ -12,15 +12,6 @@
 
 #include "libftprintf.h"
 
-int				type(t_type *type, t_print *print, va_list vlst, int i)
-{
-	many_types(type, print, vlst);
-	def_val(print, type);
-	def_val2(print);
-	i += 2;
-	return (i);
-}
-
 int				ft_printf(const char *format, ...)
 {
 	va_list		vlstst;

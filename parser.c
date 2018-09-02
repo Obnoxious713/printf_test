@@ -29,7 +29,7 @@ int				parse_flag(const char *format, int loc, t_print *print)
 	return (1);
 }
 
-int				parse_just(const char *format, int loc, t_type *type,
+int				parse_loc(const char *format, int loc, t_type *type,
 						t_print *print)
 {
 	if (format[loc] != '.')
@@ -77,4 +77,13 @@ int				parse_len(const char *format, int i, t_print *print)
 	else
 		return (0);
 	return (1);
+}
+
+int				parse_type_loc(t_type *type, t_print *print, va_list vlst, int i)
+{
+	many_types(type, print, vlst);
+	def_val(print, type);
+	def_val2(print);
+	i += 2;
+	return (i);
 }

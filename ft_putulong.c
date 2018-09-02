@@ -12,7 +12,7 @@
 
 #include "libftprintf.h"
 
-void			ft_putulong(t_print *print, unsigned long long n)
+void			ft_putulong(unsigned long long n, t_print *print)
 {
 	int			i;
 	int			tmp[100];
