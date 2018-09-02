@@ -67,15 +67,15 @@ void			start(const char *format, t_type *type, t_print *print,
 			break ;
 		while (format[loc])
 		{
-			loc = type_loc(format, loc, print, type);
+			loc = flag_loc(format, loc, print, type);
 			if ((ft_isdigit(format[loc + 1]) && format[loc + 1] != '0') ||
 					format[loc + 1] == '.')
 				loc = parse_loc(format, loc, type, print);
 			loc = size_loc(format, loc, print);
 			loc = space_loc(format, loc, print);
-			if (parse_flag(format, loc, print))
+			if (get_type(format, loc, type))
 			{
-				loc = parse_type_loc(type, print, vlst, loc);
+				loc = parse_flag_loc(type, print, vlst, loc);
 				break ;
 			}
 			loc = last_loc(format, loc, print);

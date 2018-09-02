@@ -37,7 +37,7 @@ int				get_loc(const char *format, int loc, t_print *print)
 	return (loc);
 }
 
-int				type_loc(const char *format, int loc,
+int				flag_loc(const char *format, int loc,
 							t_print *print, t_type *type)
 {
 	if (parse_flag(format, loc, print))

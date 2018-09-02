@@ -13,7 +13,7 @@
 NAME = libftprintf.a
 NAME2 = pft
 
-FLAGS =	-Wall -Wextra -Werror -g
+FLAGS =	-Wall -Wextra -Werror -g -fsanitize=address
 
 CC = gcc
 
@@ -38,29 +38,29 @@ SRC = libft/ft_bzero.c \
 		libft/ft_ltoa.c \
 		libft/ft_ltoa_base.c \
 		libft/ft_ultoa_base.c \
-		libft/ft_wstrlen.c \
-		ft_printf.c \
-		flags.c \
 		ft_putnbr_pr.c \
 		ft_putstr_min.c \
 		ft_putstr_prec.c \
 		ft_putulong.c \
+		ft_wstrlen.c \
 		ft_putwstr_prec.c \
 		helper.c \
-		loc.c \
-		parser.c \
-		prec.c \
 		print_flags.c \
 		size.c \
-		start.c \
+		parser.c \
+		prec.c \
+		flags.c \
+		loc.c \
 		type_char.c \
 		type_hex_int_1.c \
 		type_hex_int.c \
 		type_int_1.c \
 		type_int.c \
-		type.c
+		type.c \
+		start.c \
+		ft_printf.c \
+		main.c
 
-		# main.c
 OBJ = $(SRC:.c=.o)
 EXT = $(IDIR)$(NAME:.a=.h)
 
@@ -72,7 +72,7 @@ LINK_FT = -L./libft -lft
 
 LINK_PF = -L./ -lftprintf
 
-all: $(LIBFT) $(NAME) #exe
+all: $(LIBFT) $(NAME) exe
 
 love: all
 

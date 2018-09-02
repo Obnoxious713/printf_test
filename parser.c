@@ -79,7 +79,7 @@ int				parse_len(const char *format, int i, t_print *print)
 	return (1);
 }
 
-int				parse_type_loc(t_type *type, t_print *print, va_list vlst, int i)
+int				parse_flag_loc(t_type *type, t_print *print, va_list vlst, int i)
 {
 	many_types(type, print, vlst);
 	def_val(print, type);

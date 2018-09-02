@@ -80,6 +80,7 @@ void			ft_putstr_min(char *str, t_print *print);
 void			ft_putstr_prec(char *str, t_print *print);
 void			ft_putulong(unsigned long long n, t_print *print);
 void			ft_putwstr_prec(wchar_t *str, t_print *print);
+int				ft_wstrlen(wchar_t *str);
 //!
 int				num_len_i(int num);
 int				num_len_l(long num);
@@ -87,7 +88,7 @@ void			osx_len(t_type *type, t_print *print, char *str);
 void			zero_len(t_type *type, int num, char *str);
 //!
 int				get_loc(const char *format, int loc, t_print *print);
-int				type_loc(const char *format, int loc,
+int				flag_loc(const char *format, int loc,
 							t_print *print, t_type *type);
 int				size_loc(const char *format, int loc, t_print *print);
 int				space_loc(const char *format, int loc, t_print *print);
@@ -97,7 +98,7 @@ int				parse_flag(const char *format, int loc, t_print *print);
 int				parse_loc(const char *format, int loc, t_type *type,
 							t_print *print);
 int				parse_len(const char *format, int i, t_print *print);
-int				parse_type_loc(t_type *type, t_print *print, va_list vlst, int i);
+int				parse_flag_loc(t_type *type, t_print *print, va_list vlst, int i);
 //!
 int				get_tsize(const char *format, int loc,
 						t_type *type, t_print *print);

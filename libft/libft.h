@@ -121,6 +121,5 @@ char				*ft_ultoa_base(unsigned long long n, int base);
 char				*ft_strrev(char *str);
 char				*ft_strtoupper(char *str);
 char				*ft_itoa_base(int n, int base);
-int					ft_wstrlen(wchar_t *str);
 
 #endif

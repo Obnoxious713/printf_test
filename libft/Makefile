@@ -12,7 +12,7 @@
 
 HEADER = libft.h
 
-FLAGS = -Wall -Werror -Wextra -g
+FLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 
 NORM = norminette -R CheckForbiddenSourceHeader
 
@@ -105,8 +105,7 @@ SRC = ft_atoi.c \
 		ft_ultoa_base.c \
 		ft_strrev.c \
 		ft_strtoupper.c \
-		ft_itoa_base.c \
-		ft_wstrlen.c
+		ft_itoa_base.c
 
 OBJ = $(addprefix $(OBJDIR),$(SRC:.c=.o))
 # OBJ = $(patsubst %.c, %.o, $(SRC))
