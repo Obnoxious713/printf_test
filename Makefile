@@ -39,8 +39,8 @@ SRC = libft/ft_bzero.c \
 		libft/ft_ltoa_base.c \
 		libft/ft_ultoa_base.c \
 		libft/ft_wstrlen.c \
-		flags.c \
 		ft_printf.c \
+		flags.c \
 		ft_putnbr_pr.c \
 		ft_putstr_min.c \
 		ft_putstr_prec.c \
