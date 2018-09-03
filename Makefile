@@ -13,7 +13,7 @@
 NAME = libftprintf.a
 NAME2 = pft_to_push
 
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror
 
 CC = gcc
 
@@ -71,7 +71,7 @@ $(O): | ./bin
 
 exe: $(NAME)
 	@echo "-> Compiling $(NAME2)..."
-	@$(CC) -o $(NAME2) $(O) $(LINK_FT) $(LINK_PF) -W1,--no-undefined -fsanitize=address
+	@$(CC) -o $(NAME2) $(O) $(LINK_FT) $(LINK_PF)
 	@echo "\n   * * *   Done   * * *"
 
 ./bin:
