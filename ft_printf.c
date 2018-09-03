@@ -14,7 +14,7 @@
 
 int				ft_printf(const char *format, ...)
 {
-	va_list		vlstst;
+	va_list		vlst;
 	t_print		print;
 	t_type		type;
 
@@ -22,9 +22,9 @@ int				ft_printf(const char *format, ...)
 	print.loc = 0;
 	def_val(&print, &type);
 	def_val2(&print);
-	va_start(vlstst, format);
-	start(format, &type, &print, vlstst);
-	va_end(vlstst);
+	va_start(vlst, format);
+	start(format, &type, &print, vlst);
+	va_end(vlst);
 	def_val(&print, &type);
 	def_val2(&print);
 	return (print.loc);

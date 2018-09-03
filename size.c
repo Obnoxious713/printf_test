@@ -29,7 +29,6 @@ int				get_tsize(const char *format, int loc,
 	}
 	while (ft_isdigit(format[loc]) && format[loc])
 		str[i++] = format[loc++];
-		//! rm i++ and loc++
 	str[i] = '\0';
 	print->size = ft_atoi(str);
 	type->len = i;
@@ -55,7 +54,6 @@ int				get_psize(const char *format, int loc, t_print *print)
 	}
 	while (ft_isdigit(format[loc]) && format[loc])
 		str[i++] = format[loc++];
-		//! rm i++ and loc++
 	str[i] = '\0';
 	print->size = ft_atoi(str);
 	if (print->sharp == 0 && print->plus == 0 &&
@@ -78,7 +76,6 @@ int				get_zsize(const char *format, int loc, t_print *print)
 	}
 	while (ft_isdigit(format[loc]))
 		str[i++] = format[loc++];
-		//! rm i++ and loc++
 	print->size = ft_atoi(str);
 	loc--;
 	return (loc);

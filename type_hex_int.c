@@ -27,7 +27,7 @@ void			lx(t_type *type, t_print *print, va_list vlst)
 {
 	unsigned long long	l;
 
-	l =va_arg(vlst, unsigned long long);
+	l = va_arg(vlst, unsigned long long);
 	print_flags_start(type, print, 0, ft_ultoa_base(l, 16));
 	ft_putstr(ft_ultoa_base(l, 16));
 	print->loc += ft_strlen(ft_ultoa_base(l, 16));

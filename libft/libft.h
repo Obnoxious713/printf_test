@@ -20,7 +20,6 @@
 # include <sys/uio.h>
 # include <math.h>
 # include "get_next_line.h"
-# include "../libftprintf.h"
 
 # define MAX(a,b) (a > b ? a : b)
 # define MIN(a,b) (a < b ? a : b)
@@ -121,5 +120,6 @@ char				*ft_ultoa_base(unsigned long long n, int base);
 char				*ft_strrev(char *str);
 char				*ft_strtoupper(char *str);
 char				*ft_itoa_base(int n, int base);
+int					ft_wstrlen(wchar_t *str);
 
 #endif

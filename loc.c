@@ -77,8 +77,7 @@ int				space_loc(const char *format, int loc, t_print *print)
 {
 	if (format[loc + 1] == ' ' && format[loc] == '%')
 		print->space = 1;
-		// 	loc++;
-	return (++loc);
+	return (loc++);
 }
 
 int				last_loc(const char *format, int loc, t_print *print)

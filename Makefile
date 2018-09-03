@@ -11,55 +11,32 @@
 # **************************************************************************** #
 
 NAME = libftprintf.a
-NAME2 = pft
+NAME2 = pft_to_push
 
-FLAGS =	-Wall -Wextra -Werror -g -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -g
 
 CC = gcc
 
 ODIR = ./
 IDIR = ./
 
-SRC = libft/ft_bzero.c \
-		libft/ft_memalloc.c \
-		libft/ft_putchar.c \
-		libft/ft_putstr.c \
-		libft/ft_putnbr.c \
-		libft/ft_toupper.c \
-		libft/ft_strlen.c \
-		libft/ft_itoa.c \
-		libft/ft_itoa_base.c \
-		libft/ft_isdigit.c \
-		libft/ft_strcpy.c \
-		libft/ft_isalpha.c \
-		libft/ft_atoi.c \
-		libft/ft_strcmp.c \
-		libft/ft_strtoupper.c \
-		libft/ft_ltoa.c \
-		libft/ft_ltoa_base.c \
-		libft/ft_ultoa_base.c \
-		ft_putnbr_pr.c \
-		ft_putstr_min.c \
-		ft_putstr_prec.c \
-		ft_putulong.c \
-		ft_wstrlen.c \
-		ft_putwstr_prec.c \
+SRC = flags.c \
+		ft_printf.c \
+		ft_put_pf.c \
 		helper.c \
-		print_flags.c \
-		size.c \
+		loc.c \
 		parser.c \
 		prec.c \
-		flags.c \
-		loc.c \
-		type_char.c \
-		type_hex_int_1.c \
-		type_hex_int.c \
-		type_int_1.c \
-		type_int.c \
-		type.c \
+		print_flags.c \
+		size.c \
 		start.c \
-		ft_printf.c \
-		main.c
+		type_char.c \
+		type_hex_int.c \
+		type_hex_int_1.c \
+		type_int.c \
+		type_int_1.c \
+		type.c
+		# main.c
 
 OBJ = $(SRC:.c=.o)
 EXT = $(IDIR)$(NAME:.a=.h)
@@ -72,7 +49,7 @@ LINK_FT = -L./libft -lft
 
 LINK_PF = -L./ -lftprintf
 
-all: $(LIBFT) $(NAME) exe
+all: $(LIBFT) $(NAME) #exe
 
 love: all
 
@@ -94,7 +71,7 @@ $(O): | ./bin
 
 exe: $(NAME)
 	@echo "-> Compiling $(NAME2)..."
-	@$(CC) -o $(NAME2) $(O) $(LINK_FT) $(LINK_PF)
+	@$(CC) -o $(NAME2) $(O) $(LINK_FT) $(LINK_PF) -W1,--no-undefined -fsanitize=address
 	@echo "\n   * * *   Done   * * *"
 
 ./bin:

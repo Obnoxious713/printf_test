@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_min.c                                    :+:      :+:    :+:   */
+/*   ft_wstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfleisch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/31 13:03:37 by jfleisch          #+#    #+#             */
-/*   Updated: 2018/08/31 13:03:39 by jfleisch         ###   ########.fr       */
+/*   Created: 2018/08/31 13:39:42 by jfleisch          #+#    #+#             */
+/*   Updated: 2018/08/31 13:39:44 by jfleisch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-void			ft_putstr_min(char *str, t_print *print)
+int				ft_wstrlen(wchar_t *str)
 {
 	int			i;
 
 	i = 0;
-	while (i < print->after_size && str[i])
-	{
-		ft_putchar(str[i]);
+	while (str[i])
 		i++;
-		print->loc++;
-	}
+	return (i);
 }

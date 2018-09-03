@@ -15,6 +15,7 @@
 void			type_o_1(t_type *type, t_print *print, va_list vlst)
 {
 	unsigned long long	o;
+
 	o = va_arg(vlst, unsigned long long);
 	if (print->precision == 1)
 		print_prec(type, print, o, ft_ltoa_base(o, 8));
@@ -89,6 +90,7 @@ void			type_d_1(t_type *type, t_print *print, va_list vlst)
 void			last_d(t_type *type, t_print *print, va_list vlst)
 {
 	intmax_t	d;
+
 	d = (int)va_arg(vlst, intmax_t);
 	print_flags_start(type, print, d, NULL);
 	if (print->zero == 1 && d < 0)

@@ -53,7 +53,6 @@ void			print_flags_end(t_type *type, t_print *print,
 		else if (type->x == 1 || type->x_1 == 1 || type->o == 1 ||
 					type->o_1 == 1 || type->s == 1 || type->s_1 == 1)
 			osx_len(type, print, str);
-			
 		else if (type->p == 1)
 		{
 			if (num == 0)
@@ -62,7 +61,7 @@ void			print_flags_end(t_type *type, t_print *print,
 				type->len = ft_strlen(str) + 2;
 		}
 		else if (type->c == 1)
-			type->len =1;
+			type->len = 1;
 		print_minus(type, print);
 	}
 }

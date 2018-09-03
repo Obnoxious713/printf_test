@@ -99,4 +99,3 @@ int				get_type(const char *format, int i, t_type *type)
 		return (0);
 	return (1);
 }
-
