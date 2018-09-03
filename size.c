@@ -25,7 +25,7 @@ int				get_tsize(const char *format, int loc,
 			return (loc + 1);
 		while (format[loc] && !ft_isdigit(format[loc]) &&
 				format[loc] != '.')
-			i++;
+			loc++;
 	}
 	while (ft_isdigit(format[loc]) && format[loc])
 		str[i++] = format[loc++];

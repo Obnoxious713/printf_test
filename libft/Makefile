@@ -12,7 +12,7 @@
 
 HEADER = libft.h
 
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -g
 
 NORM = norminette -R CheckForbiddenSourceHeader
 

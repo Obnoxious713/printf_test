@@ -13,7 +13,7 @@
 NAME = libftprintf.a
 NAME2 = pft_to_push
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 
 CC = gcc
 
@@ -54,9 +54,9 @@ SRC = libft/ft_bzero.c \
 		type_hex_int_1.c \
 		type_int.c \
 		type_int_1.c \
-		type.c
+		type.c \
+		main.c
 
-		# main.c
 OBJ = $(SRC:.c=.o)
 EXT = $(IDIR)$(NAME:.a=.h)
 
@@ -68,7 +68,7 @@ LINK_FT = -L./libft -lft
 
 LINK_PF = -L./ -lftprintf
 
-all: $(LIBFT) $(NAME) #exe
+all: $(LIBFT) $(NAME) exe
 
 love: all
 
