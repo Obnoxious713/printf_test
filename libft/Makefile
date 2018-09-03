@@ -12,7 +12,7 @@
 
 HEADER = libft.h
 
-FLAGS = -Wall -Werror -Wextra -g -fsanitize=address
+FLAGS = -Wall -Werror -Wextra
 
 NORM = norminette -R CheckForbiddenSourceHeader
 
