@@ -36,8 +36,8 @@ SRC = flags.c \
 		type_int.c \
 		type_int_1.c \
 		type.c
-		# main.c
 
+		# main.c
 OBJ = $(SRC:.c=.o)
 EXT = $(IDIR)$(NAME:.a=.h)
 
