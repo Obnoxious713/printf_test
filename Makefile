@@ -59,7 +59,7 @@ norm:
 $(LIBFT):
 	@make -C ./libft
 
-$(NAME): $(O) $(ODIR) $(EXT)
+$(NAME): $(O) $(EXT)
 	@echo "-> Creating archive $(NAME)...\n "
 	@ar rc $(NAME) $(O)
 	@ranlib $(NAME)
