@@ -38,6 +38,7 @@ SRC = libft/ft_bzero.c \
 		libft/ft_ltoa.c \
 		libft/ft_ltoa_base.c \
 		libft/ft_ultoa_base.c \
+		libft/ft_wstrlen
 		flags.c \
 		ft_printf.c \
 		ft_put_pf.c \
