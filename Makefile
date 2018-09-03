@@ -67,7 +67,7 @@ $(NAME): $(O) $(EXT)
 $(ODIR)%.o: %.c
 	@$(CC) $(FLAGS) $(FTINC) -I $(IDIR) -c $< -o $@
 
-$(O): | ./bin
+$(O): $(ODIR)
 
 exe: $(NAME)
 	@echo "-> Compiling $(NAME2)..."
