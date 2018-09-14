@@ -54,8 +54,8 @@ SRC = libft/ft_bzero.c \
 		type_hex_int_1.c \
 		type_int.c \
 		type_int_1.c \
-		type.c
-		# main.c
+		type.c \
+		main.c
 
 OBJ = $(SRC:.c=.o)
 EXT = $(IDIR)$(NAME:.a=.h)
@@ -68,7 +68,7 @@ LINK_FT = -L./libft -lft
 
 LINK_PF = -L./ -lftprintf
 
-all: $(LIBFT) $(NAME) #exe
+all: $(LIBFT) $(NAME) exe
 
 love: all
 

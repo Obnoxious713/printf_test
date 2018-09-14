@@ -25,7 +25,5 @@ int				ft_printf(const char *format, ...)
 	va_start(vlst, format);
 	start(format, &type, &print, vlst);
 	va_end(vlst);
-	def_val(&print, &type);
-	def_val2(&print);
 	return (print.loc);
 }

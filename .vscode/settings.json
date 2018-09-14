@@ -1,0 +1,69 @@
+{
+	"workbench.colorTheme": "Dobri Next -C02- Indigo",
+	"workbench.iconTheme": "vscode-icons",
+	"editor.fontSize": 15,
+	"files.exclude":
+	{
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/._*": true,
+		"**/.dist": true,
+	},
+	"editor.acceptSuggestionOnEnter": "on",
+	"editor.cursorBlinking": "solid",
+	"editor.cursorStyle": "underline",
+	"editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+	"files.insertFinalNewline": true,
+	"better-comments.highlightPlainText": true,
+	"better-comments.multilineComments": true,
+	"better-comments.tags": [
+		{
+			"tag": "!",
+			"color": "#FF2D00",
+			"strikethrough": false,
+			"backgroundColor": "transparent"
+		},
+		{
+			"tag": "?",
+			"color": "#7e05b4",
+			"strikethrough": false,
+			"backgroundColor": "transparent"
+		},
+		{
+			"tag": "//",
+			"color": "#474747",
+			"strikethrough": true,
+			"backgroundColor": "transparent"
+		},
+		{
+			"tag": "todo",
+			"color": "#d606e3",
+			"strikethrough": false,
+			"backgroundColor": "transparent"
+		},
+		{
+			"tag": "*",
+			"color": "#0bc90e",
+			"strikethrough": false,
+			"backgroundColor": "transparent"
+		}
+	],
+	"subtleBrackets.bracketPairs": [
+		"{}",
+		"[]",
+		"()"
+	],
+	"files.associations": {
+		"*.h": "c",
+		"limits": "c"
+	},
+	"editor.matchBrackets": false,
+    "explorer.confirmDelete": false,
+    "editor.tabSize": 4,
+    "editor.renderWhitespace": "boundary",
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": true
+}
